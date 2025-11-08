@@ -1,0 +1,736 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+/* Base Styles */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: linear-gradient(rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5)),
+    url("https://media.istockphoto.com/id/1312706413/id/foto/gedung-rumah-sakit-modern.jpg?s=1024x1024&w=is&k=20&c=eVUmkxYB7P_w_Djx16IV3EOq9PIKhN89NRUMBDRYdbc=")
+      center/cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero-text {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3) translateY(30px);
+  }
+
+  50% {
+    transform: scale(1.05) translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Classes */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.bounce-in {
+  animation: bounceIn 0.7s ease-out forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Stagger Delays */
+.stagger-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.stagger-6 {
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+/* Transitions */
+.smooth-transition {
+  transition: all 0.3s ease;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Feature Icon */
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+@media (min-width: 768px) {
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+}
+
+/* Stats Counter */
+.stats-counter {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .stats-counter {
+    font-size: 3rem;
+  }
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Dashboard Components */
+.sidebar {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+/* Navigation Styles */
+nav {
+  transition: all 0.3s ease;
+}
+
+nav a {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+nav a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #805ad5;
+  transition: width 0.3s ease;
+}
+
+nav a:hover:after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #805ad5 !important;
+  font-weight: bold;
+}
+
+nav a.active:after {
+  width: 100%;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Dashboard Responsive */
+.dashboard-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    transform: scale(0.7);
+    transform-origin: top left;
+    width: 142.857%;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-container {
+    transform: scale(0.5);
+    width: 200%;
+  }
+
+  .hero-gradient {
+    background-size: cover;
+    background-position: center;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+
+  .text-5xl {
+    font-size: 2rem;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+body.dark-mode .hero-gradient {
+  background: linear-gradient(rgba(26, 32, 44, 0.8), rgba(45, 55, 72, 0.8)),
+    url("https://media.istockphoto.com/id/1312706413/id/foto/gedung-rumah-sakit-modern.jpg?s=1024x1024&w=is&k=20&c=eVUmkxYB7P_w_Djx16IV3EOq9PIKhN89NRUMBDRYdbc=")
+      center/cover;
+}
+
+body.dark-mode .gradient-text {
+  background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-card,
+body.dark-mode .bg-white {
+  background-color: #2d3748;
+  color: #e2e8f0;
+}
+
+body.dark-mode .text-gray-600 {
+  color: #a0aec0;
+}
+
+body.dark-mode .text-gray-700 {
+  color: #cbd5e0;
+}
+
+body.dark-mode .text-gray-800 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .bg-gray-50 {
+  background-color: #2d3748;
+}
+
+body.dark-mode .bg-gray-100 {
+  background-color: #4a5568;
+}
+
+body.dark-mode .bg-gray-200 {
+  background-color: #4a5568;
+}
+
+body.dark-mode .border-gray-300 {
+  border-color: #4a5568;
+}
+
+body.dark-mode nav {
+  background-color: #2d3748 !important;
+  backdrop-filter: blur(10px);
+}
+
+body.dark-mode #mobile-menu {
+  background-color: #2d3748;
+}
+
+body.dark-mode #mobile-menu a {
+  color: #e2e8f0;
+}
+
+body.dark-mode #mobile-menu a:hover {
+  background-color: #4a5568;
+}
+
+/* Utility Classes */
+.progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e2e8f0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* ===
+=====================================
+   TABLE RESPONSIVE IMPROVEMENTS
+   ======================================== */
+
+/* Table responsive styling */
+@media (max-width: 640px) {
+  #dashboard table {
+    font-size: 0.75rem;
+  }
+
+  #dashboard table td,
+  #dashboard table th {
+    padding: 0.5rem 0.25rem;
+  }
+
+  #dashboard table td:first-child,
+  #dashboard table th:first-child {
+    padding-left: 0.75rem;
+  }
+
+  #dashboard table td:last-child,
+  #dashboard table th:last-child {
+    padding-right: 0.75rem;
+  }
+
+  /* Hide image column on mobile */
+  #dashboard table td:nth-child(3),
+  #dashboard table th:nth-child(3) {
+    display: none;
+  }
+
+  /* Adjust progress bar width */
+  #dashboard .progress-bar {
+    width: 3rem !important;
+    height: 0.375rem !important;
+  }
+
+  #dashboard .progress-fill {
+    height: 0.375rem !important;
+  }
+
+  /* Smaller badges */
+  #dashboard table .bg-blue-100,
+  #dashboard table .bg-green-100,
+  #dashboard table .bg-purple-100,
+  #dashboard table .bg-orange-100 {
+    padding: 0.125rem 0.375rem;
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 640px) {
+  #dashboard table td:nth-child(3),
+  #dashboard table th:nth-child(3) {
+    display: table-cell;
+  }
+}
+
+/* Improve table scrolling */
+#dashboard .overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+#dashboard .overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+#dashboard .overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#dashboard .overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+#dashboard .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Table pagination responsive */
+@media (max-width: 640px) {
+  #dashboard .flex.justify-between.items-center.mt-4 {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  #dashboard .flex.gap-2 {
+    justify-content: center;
+  }
+}
+
+/* ==
+======================================
+   DASHBOARD SIDEBAR FIX
+   ======================================== */
+
+/* Dashboard container */
+#dashboard .bg-gray-100 {
+  position: relative;
+}
+
+/* Dashboard flex container */
+#dashboard .flex.relative {
+  min-height: 400px;
+}
+
+@media (min-width: 640px) {
+  #dashboard .flex.relative {
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #dashboard .flex.relative {
+    min-height: 700px;
+  }
+}
+
+/* Dashboard sidebar */
+#dashboard-sidebar {
+  transition: transform 0.3s ease-in-out;
+  border-right: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+/* Desktop: sidebar always visible */
+@media (min-width: 768px) {
+  #dashboard-sidebar {
+    position: relative !important;
+    transform: translateX(0) !important;
+    box-shadow: none !important;
+  }
+
+  #dashboard-menu-btn {
+    display: none !important;
+  }
+
+  #dashboard-close-btn {
+    display: none !important;
+  }
+
+  #dashboard-overlay {
+    display: none !important;
+  }
+}
+
+/* Mobile: sidebar hidden by default */
+@media (max-width: 767px) {
+  #dashboard-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 40;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #dashboard-sidebar.-translate-x-full {
+    transform: translateX(-100%);
+  }
+
+  #dashboard-sidebar:not(.-translate-x-full) {
+    transform: translateX(0);
+  }
+}
+
+/* Dashboard overlay */
+#dashboard-overlay {
+  pointer-events: none;
+}
+
+#dashboard-overlay:not(.hidden) {
+  pointer-events: auto;
+}
+
+/* Dashboard main content */
+#dashboard-main {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+/* Dashboard header improvements */
+#dashboard header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+}
+
+/* Dashboard cards spacing */
+#dashboard .stat-card,
+#dashboard .card {
+  height: 100%;
+}
+
+/* Improve dashboard table on mobile */
+@media (max-width: 640px) {
+  #dashboard table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Dashboard sidebar scrollbar */
+#dashboard-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#dashboard-sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#dashboard-sidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+#dashboard-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ====
+====================================
+   DASHBOARD HEADER FIX
+   ======================================== */
+
+/* Dashboard header responsive */
+#dashboard header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+}
+
+/* Prevent header overflow */
+#dashboard header .flex {
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1024px) {
+  #dashboard header .flex {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Search input responsive */
+#dashboard header input[type="text"] {
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  #dashboard header input[type="text"] {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  }
+}
+
+/* Admin profile responsive */
+#dashboard header .bg-gray-100 {
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  #dashboard header .bg-gray-100 > div {
+    display: none;
+  }
+}
+
+/* Ensure buttons don't shrink */
+#dashboard header button {
+  flex-shrink: 0;
+}
+
+/* Main content padding adjustment */
+#dashboard-main {
+  padding-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  #dashboard-main {
+    padding-top: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #dashboard-main {
+    padding-top: 1.5rem;
+  }
+}
